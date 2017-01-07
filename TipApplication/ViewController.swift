@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
     @IBOutlet weak var splitBillTotal: UILabel!
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var splitSlider: UISlider!
@@ -25,11 +26,15 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-        let defaults = UserDefaults.standard
         let intValue = defaults.integer(forKey: "tip")
         tipControl.selectedSegmentIndex=intValue
         
-        updateBill(NSNull)
+        let saveBill = defaults.string(forKey: "bill")
+        billTextField.text=saveBill
+        
+        let tipPercent = defaults.float(forKey: "tipPercent")
+        splitSlider.setValue(tipPercent, animated: true)
+        updateBill(NSNull.self)
         
     }
 
@@ -54,9 +59,20 @@ class ViewController: UIViewController {
         totalLabel.text=String (format: "$%.2f", total)
         splitBillTotal.text=String (format: "$%.2f", splitTotal)
         splitLabel.text="\(splitNum)"
+        
+        // save bill, tip, and tip percent
+        defaults.set(billTextField.text, forKey: "bill")
+        defaults.set(tipControl.selectedSegmentIndex, forKey: "tip")
+        defaults.set(splitSlider.value, forKey: "tipPercent")
+        // Force UserDefaults to save.
+        defaults.synchronize()
+        
+       
     }
     @IBAction func updateBill(_ sender: Any) {
+
         calculateBill(sender)
+        
     }
     @IBAction func updateSplitBill(_ sender: Any) {
         calculateBill(sender)

@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
     @IBOutlet weak var tipControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,6 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let defaults = UserDefaults.standard
         let intValue = defaults.integer(forKey: "tip")
         print(intValue)
         
@@ -35,8 +35,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func setDaultTip(_ sender: Any) {
-        
-        let defaults = UserDefaults.standard
         
         // Set an Integer value for some key.
         defaults.set(tipControl.selectedSegmentIndex, forKey: "tip")
