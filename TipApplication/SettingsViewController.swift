@@ -10,7 +10,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var autoSave: UISwitch!
     let defaults = UserDefaults.standard
+    
     @IBOutlet weak var tipControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,9 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let intValue = defaults.integer(forKey: "tip")
-        print(intValue)
         
         tipControl.selectedSegmentIndex=intValue
+        autoSave.setOn(defaults.bool(forKey: "saveState"), animated: true)
         
     }
     
@@ -32,6 +34,13 @@ class SettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func setSave(_ sender: Any) {
+        let save = autoSave.isOn
+        defaults.set(save, forKey: "saveState")
+        defaults.synchronize()
+        print(save)
     }
     
     @IBAction func setDaultTip(_ sender: Any) {

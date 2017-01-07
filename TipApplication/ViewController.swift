@@ -26,14 +26,20 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
+        //get index of tip
         let intValue = defaults.integer(forKey: "tip")
         tipControl.selectedSegmentIndex=intValue
         
-        let saveBill = defaults.string(forKey: "bill")
-        billTextField.text=saveBill
+        //get autoload state
+        let saveState = defaults.bool(forKey: "saveState")
         
-        let tipPercent = defaults.float(forKey: "tipPercent")
-        splitSlider.setValue(tipPercent, animated: true)
+        if saveState{
+            let saveBill = defaults.string(forKey: "bill")
+            billTextField.text=saveBill
+        
+            let tipPercent = defaults.float(forKey: "tipPercent")
+            splitSlider.setValue(tipPercent, animated: true)
+        }
         updateBill(NSNull.self)
         
     }
@@ -47,7 +53,9 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
     @IBAction func calculateBill(_ sender: Any) {
+        
         let splitNum = Int(splitSlider.value)
         let tipPercentages = [0.15, 0.18, 0.2, 0.25]
         let bill = Double(billTextField.text!) ?? 0
