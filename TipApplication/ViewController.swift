@@ -21,6 +21,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        let defaults = UserDefaults.standard
+        let intValue = defaults.integer(forKey: "tip")
+        tipControl.selectedSegmentIndex=intValue
+        
+        updateBill(NSNull)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
