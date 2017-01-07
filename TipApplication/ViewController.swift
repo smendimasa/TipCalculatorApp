@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var splitBillTotal: UILabel!
+    @IBOutlet weak var splitLabel: UILabel!
+    @IBOutlet weak var splitSlider: UISlider!
+    @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var billTextField: UITextField!
+    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +27,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func calculateBill(_ sender: Any) {
+        let splitNum = Int(splitSlider.value)
+        let tipPercentages = [0.15, 0.18, 0.2, 0.25]
+        let bill = Double(billTextField.text!) ?? 0
+        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        let total = (bill + tip)
+        let splitTotal = (bill + tip)/(double_t(splitNum))
+        
+        tipLabel.text=String (format: "$%.2f", tip)
+        totalLabel.text=String (format: "$%.2f", total)
+        splitBillTotal.text=String (format: "$%.2f", splitTotal)
+        splitLabel.text="\(splitNum)"
+    }
+    @IBAction func updateBill(_ sender: Any) {
+        calculateBill(sender)
+    }
+    @IBAction func updateSplitBill(_ sender: Any) {
+        calculateBill(sender)
+    }
 
 }
 

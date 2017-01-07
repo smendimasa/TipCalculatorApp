@@ -14,6 +14,7 @@
 		19F1A01F1E204A9900950B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F1A01D1E204A9900950B69 /* LaunchScreen.storyboard */; };
 		19F1A02A1E204A9A00950B69 /* TipApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1A0291E204A9A00950B69 /* TipApplicationTests.swift */; };
 		19F1A0351E204A9A00950B69 /* TipApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1A0341E204A9A00950B69 /* TipApplicationUITests.swift */; };
+		19F1A0431E20542E00950B69 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1A0421E20542E00950B69 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		19F1A0301E204A9A00950B69 /* TipApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F1A0341E204A9A00950B69 /* TipApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApplicationUITests.swift; sourceTree = "<group>"; };
 		19F1A0361E204A9A00950B69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F1A0421E20542E00950B69 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				19F1A0141E204A9900950B69 /* AppDelegate.swift */,
 				19F1A0161E204A9900950B69 /* ViewController.swift */,
 				19F1A0181E204A9900950B69 /* Main.storyboard */,
+				19F1A0421E20542E00950B69 /* SettingsViewController.swift */,
 				19F1A01B1E204A9900950B69 /* Assets.xcassets */,
 				19F1A01D1E204A9900950B69 /* LaunchScreen.storyboard */,
 				19F1A0201E204A9900950B69 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				19F1A0171E204A9900950B69 /* ViewController.swift in Sources */,
 				19F1A0151E204A9900950B69 /* AppDelegate.swift in Sources */,
+				19F1A0431E20542E00950B69 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
