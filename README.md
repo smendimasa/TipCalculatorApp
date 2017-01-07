@@ -7,6 +7,7 @@ Submitted by: Sam Mendimasa
 Time spent: 25 hours spent in total
 
 ## User Stories
+-This was amazing practice.
 
 The following **required** functionality is complete:
 
@@ -22,6 +23,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 - Added A Split Bill Option.
 - Additional Buttons were added in settings.
+- Saves Split Tip and Bill Amount after restart
 
 
 - [ ] List anything else that you can get done to improve the app functionality!
@@ -30,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/DV0Dp1W.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/YSPzHOX.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
