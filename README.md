@@ -23,10 +23,11 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 - Added A Split Bill Option.
 - Additional Buttons were added in settings.
-- Saves Split Tip and Bill Amount after restart
+- Auto Save of Split number and last bill enter
 
 
 - [ ] List anything else that you can get done to improve the app functionality!
+- More UI additions
 
 ## Video Walkthrough 
 
